@@ -18,11 +18,11 @@ proc sliderCallback(sender: ID) =
 proc main() =
     Cocoa_Init()
 
-    mainWindow = createWindow("Nim Cocoa Module GUI Test", width, height)
+    mainWindow = newWindow("Nim Cocoa Module GUI Test", width, height)
     txt1 = newTextField(mainWindow,"Welcome to AIR's Cocoa Demo", 16, 20, width-122, 22)
     btn1 = newButton(mainWindow, "Open", width-100, 20, 90, 24, btnClicked)
     combo = newComboBox(mainWindow, 16,54,210,26, nil)
-    for item in ["One", "Two", "Three"]: combo.AddItem(item)    
+    for item in ["One", "Two", "Three"]: combo.item =item    
     combo.text = "Two"
 
     chkbox = newCheckBox(mainWindow,"Check Box 1", 240, 54, 100, 24)

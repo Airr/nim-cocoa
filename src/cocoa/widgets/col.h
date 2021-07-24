@@ -91,14 +91,14 @@
     - (BOOL)isFlipped;
     @end
 
-    @interface CocoaWindow : NSWindow <NSApplicationDelegate,NSUserNotificationCenterDelegate,NSWindowDelegate>
+    @interface CocoaWindow : NSWindow <NSApplicationDelegate,NSUserNotificationCenterDelegate,NSWindowDelegate, NSTextFieldDelegate>
     {
         // NOT USED
     }
 
     - (void)applicationDidFinishLaunching: (NSNotification *)notification;
     - (BOOL)applicationShouldTerminateAfterLastWindowClosed: (NSNotification *)notification;
-    - (id) initFormWithTitle:(NSString*)title width:(NSInteger)width height:(NSInteger)height;
+    - (id) initFormWithTitle:(NSString*)title width:(NSInteger)width height:(NSInteger)height windowStyle: (NSWindowStyleMask) style;
     - (void)createApplicationMenu;
     @end
 
@@ -202,7 +202,7 @@
     - (id) initWithFrame:(NSRect)rect callBack:(ACTION)func;
 @end
 
-    id createWindow(const char* title, int width, int height);
+    id createWindow(const char* title, int width, int height, NSWindowStyleMask style);
     /**
         \brief Creates Main Window
 

@@ -5,4 +5,4 @@ import NSFunctions
 
 {.passL: "-fobjc-arc -framework Cocoa"}
 
-proc newWindow*(title: cstring, width, height: int): ID {.importc: "createWindow".}
+proc newWindow*(title: cstring, width, height: int, style: int): ID {.importc: "createWindow".}

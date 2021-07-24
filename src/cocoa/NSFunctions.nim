@@ -1,0 +1,61 @@
+{.compile: "widgets/functions.m".}
+
+type
+    ID* = pointer
+    ACTION* = proc (a2: ID) {.cdecl.}
+    
+# GUI ANCHOR SYSTEM
+const
+    akNone*      = 0
+    akRight*     = 1
+    akWidth*     = 2
+    akLeft*      = 4
+    akBottom*    = 8
+    akHeight*    = 16
+    akFull*      = 18
+    akTop*       = 32
+
+    # Flags for GUI Anchor System
+
+    # akNone       No Anchor
+    # akRight      Anchor to Right of Window
+    # akWidth      Anchor to Left and Right (width)
+    # akLeft       Anchor to Left
+    # akBottom     Anchor to Bottom
+    # akHeight     Anchor to Top and Bottom
+    # akFull       Anchor to Left/Right/Top/Bottom
+    # akTop        Anchor to Top
+
+proc Cocoa_Init*() {.cdecl, importc: "Cocoa_Init".}
+
+proc Cocoa_Run*(a2: ID) {.cdecl, importc: "Cocoa_Run".}
+
+proc Cocoa_Quit*(a2: ID) {.cdecl, importc: "Cocoa_Quit".}
+
+proc Cocoa_About*() {.cdecl, importc: "Cocoa_About".}
+proc `anchor=`*(widget: ID; value: cint) {.cdecl, importc: "Pin".}
+proc `text=`*(widget: ID; txt: cstring) {.cdecl, importc: "SetText".}
+
+proc text*(widget: ID): cstring {.cdecl, importc: "GetText".}
+
+proc value*(widget: ID): cint {.cdecl, importc: "GetValue".}
+
+proc `value=`*(widget: ID; value: cint) {.cdecl, importc: "SetValue".}
+
+proc add*(widget: ID; txt: cstring) {.cdecl, importc: "AddItem".}
+
+proc `action=`*(widget: ID; `func`: ACTION) {.cdecl, importc: "SetAction".}
+
+proc `state=`*(widget: ID; state: bool) {.cdecl, importc: "SetState".}
+
+proc state*(widget: ID): cint {.cdecl, importc: "State".}
+
+proc clear*(widget: ID) {.cdecl, importc: "LB_Clear".}
+proc `item=`(widget: ID; pos: cint) {.cdecl, importc: "SetItem".}
+proc remove*(widget: ID; pos: cint) {.cdecl, importc: "RemoveItem".}
+proc getColor*(panel: ID): cstring {.cdecl, importc: "getColor".}
+proc hexColor*(cPanel: ID): cstring {.cdecl, importc: "hexColor".}
+
+proc Notify*(title: cstring; subtitle: cstring; text: cstring) {.cdecl, importc: "Notify".}
+
+proc newSeparator*(parent: ID; x: cint; y: cint; width: cint): ID {.cdecl, importc: "createLine".}

@@ -1,6 +1,6 @@
 # <u>NimCocoa GUI Objects</u>
 
-### <u>newWindow</u>
+### <u>NSWindow</u>
 
 ##### proc newWindow*(title: cstring, width, height: int, style: int): ID
 
@@ -18,7 +18,7 @@ var mainWin = newWindow("GUI", 800, 600, NSWindowStyleMaskTitled or NSWindowStyl
 
 ##### 
 
-### **<u>newLabel</u>**
+### **<u>NSLabel</u>**
 
 ##### proc newLabel*(parent: ID; txt: cstring, left, top, width, height: int): ID
 
@@ -38,7 +38,7 @@ var myLabel = newLabel(mainWin,"This is a label", 20,20,120,24)
 
 ### 
 
-### <u>newButton</u>
+### <u>NSButton</u>
 
 ##### proc newButton*(parent: ID; caption: cstring; left: cint; top: cint; width: cint; height: cint; callback: ACTION): ID
 
@@ -59,7 +59,7 @@ var btn = newButton(win, "OK", 385, 17, 81, 24, nil)
 
 ### 
 
-### **<u>newTextField</u>**
+### **<u>NSTextField</u>**
 
 ##### proc newTextField*(parent: ID; txt: cstring; left: cint; top: cint; width: cint; height: cint): ID
 
@@ -79,7 +79,7 @@ var myTextEntry = newTextField(mainWin,"", 20,20,320,24)
 
 ##### 
 
-### <u>newTextEdit</u>
+### <u>NSTextEdit</u>
 
 ##### proc newTextEdit*(parent: ID; txt: cstring, left, top, width, height: int): ID
 
@@ -99,7 +99,7 @@ var editor = newTextEdit(mainWin,"", 20, 40, 500, 500)
 
 ##### 
 
-## <u>newListbox</u>
+## <u>NSListbox</u>
 
 ##### proc newListBox*(parent: ID, left, top, width, height: cint): ID
 
@@ -118,7 +118,7 @@ var lbList = newListBox(mainwin, 16, 100, 508, 140)
 
 ##### 
 
-### <u>newLine</u>
+### <u>NSLine</u>
 
 ##### proc newLine*(parent: ID, left, top, width: cint): ID
 
@@ -136,7 +136,7 @@ var line = newLine(mainWin, 20, 100, 500)
 
 ##### 
 
-### <u>newComboBox</u>
+### <u>NSComboBox</u>
 
 ##### proc newComboBox*(parent: ID; left: cint; top: cint; width: cint; height: cint; `callback`: ACTION): ID
 
@@ -156,7 +156,7 @@ var combo = newComboBox(mainWin, 16,54,210,26, comboCallback)
 
 ##### 
 
-### <u>newCheckBox</u>
+### <u>NSCheckBox</u>
 
 ##### proc newCheckBox*(parent: ID, caption: cstring, left, top, width, height:int): ID
 
@@ -176,7 +176,7 @@ var chkbox = newCheckBox(mainWin,"Check Box 1", 240, 54, 100, 24)
 
 ##### 
 
-### <u>newSlider</u>
+### <u>NSSlider</u>
 
 ##### proc newSlider*(parent: ID; left, top, width, height: int, callback: ACTION): ID
 
@@ -196,7 +196,7 @@ var slide = newSlider(mainWin, 20, 20, 300, 24, [callback_proc or nil])
 
 ### 
 
-### <u>newOpenDialog</u>
+### <u>NSOpenDialog</u>
 
 ##### proc newOpenDialog*(parent: ID, types: cstring): cstring
 
@@ -212,7 +212,7 @@ var filename = newOpenDialog(mainWin, "nim:c:m")
 
 ##### 
 
-### <u>newSaveDialog</u>
+### <u>NSSaveDialog</u>
 
 ##### proc newSaveDialog*(parent: ID, types: cstring): cstring
 
@@ -228,7 +228,7 @@ var filename = newSaveDialog(mainWin, "nim:c:m")
 
 ### 
 
-### <u>newDialog</u>
+### <u>NSDialog</u>
 
 ##### proc newDialog*(title, message: cstring, height: cint): cint
 
@@ -245,7 +245,7 @@ var retVal = newDialog("Hello", "Greetings from somewhere", 50)
 
 ##### 
 
-### <u>newMessageBox</u>
+### <u>NSMessageBox</u>
 
 ##### proc newMessageBox*(title, message: cstring, height: cint): cint
 
@@ -263,7 +263,7 @@ var retVal = newMessageBo("Info", "Today is Monday", 100)
 
 ##### 
 
-### <u>newMenu</u>
+### <u>NSMenu</u>
 
 ##### proc newMenu*(title: cstring): ID
 
@@ -279,7 +279,7 @@ var fileMenu = newMenu(mainWin,"File")
 
 ##### 
 
-### <u>newMenuItem</u>
+### <u>NSMenuItem</u>
 
 ##### proc newMenuItem*(parent: ID, caption, key: cstring, `callback`:ACTION)
 
@@ -295,7 +295,7 @@ var fileMenu = newMenu(mainWin,"File")
 
 ##### 
 
-### <u>newMenuSeparator</u>
+### <u>NSMenuSeparator</u>
 
 ##### proc newMenuSeparator*(parent: ID)
 

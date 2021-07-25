@@ -30,8 +30,8 @@ var myLabel = newLabel(mainWin,"This is a label", 20,20,120,24)
 | --------------- | -------------- | --------------------- |
 | parent          | `ID`           | parent object         |
 | txt             | cstring        | label text            |
-| left            | cint           | x position on parent            |
-| top             | cint           | y position on parent            |
+| left            | cint           | x position on parent  |
+| top             | cint           | y position on parent  |
 | width           | cint           | width of label        |
 | height          | cint           | height of lable       |
 | **RETURN TYPE** | ID             | handle to new NSLabel |
@@ -50,8 +50,8 @@ var btn = newButton(win, "OK", 385, 17, 81, 24, nil)
 | --------------- | -------------- | --------------------------------------- |
 | parent          | ID             | parent object                           |
 | caption         | cstring        | button text                             |
-| left            | cint           | x position on parent                              |
-| top             | cint           | y position on parent                              |
+| left            | cint           | x position on parent                    |
+| top             | cint           | y position on parent                    |
 | width           | cint           | width of button                         |
 | height          | cint           | height of button                        |
 | callback        | ACTION         | function to execute when clicked or nil |
@@ -71,8 +71,8 @@ var myTextEntry = newTextField(mainWin,"", 20,20,320,24)
 | --------------- | -------------- | ------------------------------- |
 | parent          | ID             | parent object                   |
 | caption         | cstring        | text to display or blank string |
-| left            | cint           | x position on parent                      |
-| top             | cint           | y position on parent                      |
+| left            | cint           | x position on parent            |
+| top             | cint           | y position on parent            |
 | width           | cint           | width of textfield              |
 | height          | cint           | height of textfield             |
 | **RETURN TYPE** | ID             | handle to new NSTextField       |
@@ -91,8 +91,8 @@ var editor = newTextEdit(mainWin,"", 20, 40, 500, 500)
 | --------------- | -------------- | ------------------------------- |
 | parent          | ID             | parent object                   |
 | caption         | cstring        | text to display or blank string |
-| left            | cint           | x position on parent                      |
-| top             | cint           | y position on parent                      |
+| left            | cint           | x position on parent            |
+| top             | cint           | y position on parent            |
 | width           | cint           | width of textedit               |
 | height          | cint           | height of textedit              |
 | **RETURN TYPE** | ID             | handle to new NSTextEdit        |
@@ -110,8 +110,8 @@ var
 | Parameter Name  | Parameter Type | Comments                |
 | --------------- | -------------- | ----------------------- |
 | parent          | ID             | parent object           |
-| left            | cint           | x position on parent              |
-| top             | cint           | y position on parent              |
+| left            | cint           | x position on parent    |
+| top             | cint           | y position on parent    |
 | width           | cint           | width of listbox        |
 | height          | cint           | height of listbox       |
 | **RETURN TYPE** | ID             | handle to new NSListBox |
@@ -129,8 +129,8 @@ var line = newLine(mainWin, 20, 100, 500)
 | Parameter Name  | Parameter Type | Comments             |
 | --------------- | -------------- | -------------------- |
 | parent          | ID             | parent object        |
-| left            | cint           | x position on parent           |
-| top             | cint           | y position on parent           |
+| left            | cint           | x position on parent |
+| top             | cint           | y position on parent |
 | width           | cint           | width of line        |
 | **RETURN TYPE** | ID             | handle to new NSLine |
 
@@ -147,8 +147,8 @@ var combo = newComboBox(mainWin, 16,54,210,26, comboCallback)
 | Parameter Name  | Parameter Type | Comments                                              |
 | --------------- | -------------- | ----------------------------------------------------- |
 | parent          | ID             | parent object                                         |
-| left            | cint           | x position on parent                                            |
-| top             | cint           | y position on parent                                            |
+| left            | cint           | x position on parent                                  |
+| top             | cint           | y position on parent                                  |
 | width           | cint           | width of combobox                                     |
 | height          | cint           | height of combobox                                    |
 | callback        | ACTION         | function to execute when selected item changes or nil |
@@ -168,8 +168,8 @@ var chkbox = newCheckBox(mainWin,"Check Box 1", 240, 54, 100, 24)
 | --------------- | -------------- | ------------------------ |
 | parent          | ID             | parent object            |
 | caption         | cstring        | text to display          |
-| left            | cint           | x position on parent               |
-| top             | cint           | y position on parent               |
+| left            | cint           | x position on parent     |
+| top             | cint           | y position on parent     |
 | width           | cint           | width of checkbox        |
 | height          | cint           | height of checkbox       |
 | **RETURN TYPE** | ID             | handle to new NSCheckBox |
@@ -187,8 +187,8 @@ var slide = newSlider(mainWin, 20, 20, 300, 24, [callback_proc or nil])
 | Parameter Name  | Parameter Type | Comments                                |
 | --------------- | -------------- | --------------------------------------- |
 | parent          | `ID`           | parent object                           |
-| left            | cint           | x position on parent                              |
-| top             | cint           | y position on parent                              |
+| left            | cint           | x position on parent                    |
+| top             | cint           | y position on parent                    |
 | width           | cint           | width of slider                         |
 | height          | cint           | height of slider                        |
 | callback        | ACTION         | function to call when slider is updated |

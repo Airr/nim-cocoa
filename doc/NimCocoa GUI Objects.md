@@ -104,7 +104,7 @@ var editor = newTextEdit(mainWin,"", 20, 40, 500, 500)
 ##### proc newListBox*(parent: ID, left, top, width, height: cint): ID
 
 ```nim
-var 
+var lbList = newListBox(mainwin, 16, 100, 508, 140)
 ```
 
 | Parameter Name  | Parameter Type | Comments                |

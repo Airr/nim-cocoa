@@ -38,6 +38,10 @@ At the moment, the following GUI objects are available:
 
 
 
+Preliminary documentation for [GUI objects is available](docs/NimCocoa GUI Objects.md) 
+
+
+
 Here is an example of what coding with NimCocoa looks like:
 
 ```nim
@@ -101,7 +105,6 @@ proc main() =
 
 if isMainModule:
   main()
-
 ```
 
 Which results in the following:

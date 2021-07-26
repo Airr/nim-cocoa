@@ -38,7 +38,7 @@ At the moment, the following GUI objects are available:
 
 
 
-Preliminary documentation for [GUI objects is available](docs/NimCocoa%20GUI%20Objects.md) 
+Preliminary documentation for [GUI objects is available](docs/NimCocoa-GUI-Objects.md) 
 
 
 

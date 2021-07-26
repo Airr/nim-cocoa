@@ -38,7 +38,7 @@ At the moment, the following GUI objects are available:
 
 
 
-Preliminary documentation for GUI objecst is available in the `docs` folder.
+Preliminary documentation for GUI objects is available in the `doc` folder.
 
 
 

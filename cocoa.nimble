@@ -6,6 +6,7 @@ description   = "macOS Cocoa GUI package"
 license       = "MIT"
 srcDir        = "src"
 bin           = @["bundle"]
+installDirs = @["cocoa"]
 
 
 # Dependencies

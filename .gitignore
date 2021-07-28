@@ -2,4 +2,5 @@
 *.app
 *.code-workspace
 htmldocs
+bundle
 

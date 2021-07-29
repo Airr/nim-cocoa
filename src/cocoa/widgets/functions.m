@@ -61,6 +61,10 @@ const char* GetText(id widget) {
 	}else if ([widgetClass isEqualToString: @"CocoaComboBox"]) {
 		return [[widget objectValueOfSelectedItem] UTF8String];
 
+	/* RadioButton */
+	}else if ([widgetClass isEqualToString: @"RadioButton"]) {
+		return [[widget title] UTF8String];
+
 	}else{
 	/* Everything Else */
 		return [[widget stringValue] UTF8String];

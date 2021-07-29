@@ -139,7 +139,15 @@
 
         - (void) click:(id)sender;
     @end
- 
+
+    @interface RadioButton: NSButton{
+        ACTION buttonAction;
+    }
+        @property ACTION buttonAction;
+        
+
+        - (void) click:(id)sender;
+    @end 
     @interface CocoaComboBox : NSComboBox {
         // NSInteger currentItem;
         ACTION comboCallBack;
@@ -430,6 +438,23 @@
                     BOOL:       State [True/False]
     */
 
+    id createRadioButton(id parent, const char* caption, int l, int t, int w, int h, ACTION func);
+     /**
+        \brief Creates RadioButton Widget
+
+        parameters:
+                    Pointer:    Parent Widget,
+                    String:     Button Caption,
+                    INT:        Left Position in Parent,
+                    INT:        Top Position in Parent,
+                    INT:        Width of Widget,
+                    INT:        Height of Widget,
+                    ACTION:     Callback Function or NULL
+
+        Returns:
+                    Pointer to Created RadioButton
+    */
+   
     id createListBox(id parent,int l, int t, int w, int h);
     /**
         \brief Creates ListBox Widget

@@ -8,13 +8,11 @@ id createTabView(id parent, const char *label, int x, int y, int width, int heig
     NSArray *items = [str componentsSeparatedByString: @"|"];
     
 	id *widget = [[[NSTabView alloc] initWithFrame:NSMakeRect(x,y,width,height)] autorelease];
-
-    
+       
     for(NSString *x in items) {
         id sv = [[[SaneView alloc] initWithFrame: NSZeroRect] autorelease];
         [sv setBackgroundColor: [NSColor windowBackgroundColor]];
     
-
         id *tabwidget = [[[NSTabViewItem alloc] initWithIdentifier: x ] autorelease];
         [tabwidget setLabel: x];
         [tabwidget setView: sv];

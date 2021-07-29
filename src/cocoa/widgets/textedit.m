@@ -13,6 +13,9 @@
         [[self.widget textContainer] setWidthTracksTextView:NO];
         [self.widget setHorizontallyResizable:YES];
         [self.widget setTextContainerInset:NSMakeSize(2.0,2.0)];
+
+        [self.widget setAllowsUndo: YES];
+
         [self setHasHorizontalScroller: YES];
         [self setHasVerticalScroller: YES];
         [self.widget setFont: [NSFont userFontOfSize:13.0]];
@@ -34,12 +37,13 @@
             NSRange range = [textView selectedRange];
             bool bHasSelectedTexts = (range.length > 0);
            
+        //    NSLog(@"Keycod: %hu", [theEvent keyCode]);
             unsigned short keyCode = [theEvent keyCode];               
            
             bool bHandled = false;
            
             //6 Z, 7 X, 8 C, 9 V
-            if (keyCode == 6) {
+            if (keyCode == 6 ) {
                 if ([[textView undoManager] canUndo])
                 {
                     [[textView undoManager] undo];
@@ -63,6 +67,29 @@
                 return YES;               
         }
     }
+    // }else if (([theEvent type] == NSEventTypeKeyDown) && ([theEvent modifierFlags] & NSEventModifierFlagCommand & NSEventModifierFlagShift)) {
+    //     NSResponder * responder = [[self window] firstResponder];
+       
+    //     if ((responder != nil) && [responder isKindOfClass:[NSTextView class]]) {       
+    //         NSTextView * textView = (NSTextView *)responder;
+    //         NSRange range = [textView selectedRange];
+    //         bool bHasSelectedTexts = (range.length > 0);
+           
+    //         unsigned short keyCode = [theEvent keyCode];               
+           
+    //         bool bHandled = false;
+
+    //         if (keyCode == 6) {
+    //             if ([[textView undoManager] canRedo])
+    //             {
+    //                 [[textView undoManager] redo];
+    //                 bHandled = true;           
+    //             }                   
+    //         }
+    //         if (bHandled)
+    //             return YES;
+    //     }
+    // }
    
     return NO;   
 }

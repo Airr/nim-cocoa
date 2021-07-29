@@ -156,3 +156,12 @@ void Notify(const char *title, const char * subtitle, const char *text) {
 
 }
 
+void addToParent(id parent, id child) {
+	NSString *widgetClass = [[parent class] description];
+    if ([widgetClass isEqualToString:@"NSTabViewItem"]) {
+        [[parent view] addSubview: child];
+    } else {
+        [[parent contentView] addSubview: child];
+    }
+}
+

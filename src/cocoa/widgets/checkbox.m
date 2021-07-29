@@ -12,7 +12,8 @@ id createCheckBox(id parent, const char* caption, int l, int t, int w, int h){
     [self setTitle: [NSString stringWithUTF8String:caption]];
     [self setTarget: self];
 
-    [[parent contentView] addSubview:self];
+    addToParent(parent, self);
+    
     return self;
 }
 

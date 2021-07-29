@@ -5,7 +5,7 @@
 id createLine(id parent, int x, int y, int width) {
 	NSBox *widget = [[[NSBox alloc] initWithFrame:NSMakeRect(x,y,width,1)] autorelease];
 	widget.boxType = NSBoxSeparator;
-	[[parent contentView] addSubview:widget];
+	addToParent(parent, widget);
 	return widget;
 }
 

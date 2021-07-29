@@ -12,6 +12,6 @@ id createBox(id parent, const char* title, int x, int y, int width, int height) 
     [sv setBackgroundColor: [NSColor windowBackgroundColor]];
     [widget setContentView: sv];
     [widget setBorderType: NSLineBorder];
-    [[parent contentView] addSubview:widget];
+    addToParent(parent, widget);
     return widget;
 }

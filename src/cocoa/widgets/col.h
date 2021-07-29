@@ -580,6 +580,7 @@
 
     id createSlider(id parent, int left, int top, int width, int height, ACTION callback);
 
+    void addToParent(id parent, id child);
 #ifdef __cplusplus
 	}
 #endif

@@ -23,6 +23,8 @@ id createRadioButton(id parent, const char* caption, int l, int t, int w, int h,
     	[self setButtonAction:func];
     	[self setAction: @selector(click:)];
     }
-    [[parent contentView] addSubview:self];
+
+    addToParent(parent, self);
+    
     return self;
 }

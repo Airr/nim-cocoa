@@ -37,7 +37,8 @@ id createComboBox(id parent,int l, int t, int w, int h, ACTION callback){
         // [widget setAction: @selector(click:)];
     }
 
-    [[parent contentView] addSubview:widget];
+    addToParent(parent, widget);
+    
     return widget;
 }
 

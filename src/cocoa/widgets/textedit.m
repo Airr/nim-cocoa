@@ -104,7 +104,7 @@ id createTextEdit(id parent, const char* txt, int l, int t, int w, int h) {
         [[widget documentView]  setString:str];
     }
         
-    [[parent contentView] addSubview:widget];
+    addToParent(parent, widget);
     return widget;
 }
 

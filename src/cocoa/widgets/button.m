@@ -27,7 +27,8 @@ id createButton(id parent, const char* caption, int l, int t, int w, int h, ACTI
     	[widget setButtonAction:func];
     	[widget setAction: @selector(click:)];
     }
-    [[parent contentView] addSubview:widget];
+    addToParent(parent, widget);
+    
     return widget;
 }
 

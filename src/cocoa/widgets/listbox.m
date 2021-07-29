@@ -80,6 +80,6 @@
 
 id createListBox(id parent,int l, int t, int w, int h){
     id self = [[[CocoaListBox alloc] initWithFrame:NSMakeRect( l, t, w, h )] autorelease];
-    [[parent contentView] addSubview:self];
+    addToParent(parent, self);
     return self;
 }

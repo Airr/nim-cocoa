@@ -11,11 +11,16 @@ id createTabView(id parent, const char *label, int x, int y, int width, int heig
 
     
     for(NSString *x in items) {
+        id sv = [[[SaneView alloc] initWithFrame: NSZeroRect] autorelease];
+        [sv setBackgroundColor: [NSColor windowBackgroundColor]];
+    
+
         id *tabwidget = [[[NSTabViewItem alloc] initWithIdentifier: x ] autorelease];
         [tabwidget setLabel: x];
+        [tabwidget setView: sv];
         [widget addTabViewItem: tabwidget];
     }
-    
+
 	[[parent contentView] addSubview:widget];
 	return widget;
 }
@@ -29,4 +34,11 @@ void addTab(id parent, const char *name) {
         [widget setLabel: x];
         [parent addTabViewItem: widget];
     }
+}
+
+id getTab(id parent, const char *name) {
+    NSString *str = [NSString stringWithUTF8String:name];
+    NSInteger index = [parent indexOfTabViewItemWithIdentifier: str];
+    // NSLog(@"%@", [[parent tabViewItemAtIndex: index] view]);
+    return [parent tabViewItemAtIndex: index];
 }

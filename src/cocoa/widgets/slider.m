@@ -33,6 +33,6 @@
 id createSlider(id parent, int left, int top, int width, int height, ACTION callback) {
     id widget = [[CocoaSlider alloc] initWithFrame:NSMakeRect(left, top, width, height) callBack:callback];
 
-    [[parent contentView] addSubview:widget];
+    addToParent(parent, self);
     return widget;
 }

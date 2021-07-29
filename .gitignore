@@ -3,4 +3,6 @@
 *.code-workspace
 htmldocs
 bundle
+examples/AppBundler/GUI/AppBundler
+examples/test1
 

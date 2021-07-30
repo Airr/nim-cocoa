@@ -1,4 +1,4 @@
-import Cocoa
+import Cocoa / [NSWindow, NSFunctions, NSLabel, NSSlider]
 
 const 
   width = 320

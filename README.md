@@ -36,11 +36,15 @@ At the moment, the following GUI objects are available:
 
 - NSTextedit
 
+- NSRadioButton
 
+- NSTabView
+
+- NSContainer (Groupbox)
+
+- 
 
 Preliminary documentation for GUI objects is available in the `doc` folder.
-
-
 
 Here is an example of what coding with NimCocoa looks like:
 

@@ -1,4 +1,5 @@
 {.compile: "widgets/functions.m".}
+{.compile: "widgets/bind.m".}
 
 type
     ID* = pointer
@@ -75,3 +76,5 @@ proc hexColor*(cPanel: ID): cstring {.cdecl, importc: "hexColor".}
 proc Notify*(title: cstring; subtitle: cstring; text: cstring) {.cdecl, importc: "Notify".}
 
 proc newSeparator*(parent: ID; x: cint; y: cint; width: cint): ID {.cdecl, importc: "createLine".}
+
+proc link*( widget: ID, widgetIvar: cstring, target: ID, targetIvar: cstring) {.cdecl, importc:"bind".}

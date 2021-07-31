@@ -110,6 +110,8 @@
 
         - (void)colorUpdate:(NSColorPanel*)colorPanel;
 
+        -(void)changeColor:(id)sender;
+
         - (const char *) hexColor;
     @end
  
@@ -524,7 +526,9 @@
     */
 
     id createColorDialog();
-    const char *getColor(id panel);
+    id getColor(id panel);
+    void setColor(id target, id source);
+
     const char* hexColor(id cPanel);
  
     id createLabel(id parent, const char* txt, int l, int t, int w, int h);
@@ -581,6 +585,15 @@
     id createSlider(id parent, int left, int top, int width, int height, ACTION callback);
 
     void addToParent(id parent, id child);
+
+    id createBox(id parent, const char* title, int x, int y, int width, int height);
+
+    id createRadioButton(id parent, const char* caption, int l, int t, int w, int h, ACTION func);
+
+    id createTabView(id parent, const char *label, int x, int y, int width, int height);
+    void addTab(id parent, const char *name);
+    id getTab(id parent, const char *name);
+    
 #ifdef __cplusplus
 	}
 #endif

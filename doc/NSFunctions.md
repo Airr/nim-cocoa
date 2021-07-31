@@ -4,7 +4,6 @@
 
 ### StyleMasks are typically `or'd` together
 
-## NSWindowStyleMaskBorderless*             NSWindowStyleMaskTitled*                 NSWindowStyleMaskClosable*               NSWindowStyleMaskMiniaturizable*         NSWindowStyleMaskResizable*              NSWindowStyleMaskUtilityWindow*          NSWindowStyleMaskDocModalWindow*         NSWindowStyleMaskNonactivatingPanel*     NSWindowStyleMaskUnifiedTitleAndToolbar* NSWindowStyleMaskHUDWindow*              NSWindowStyleMaskFullScreen*             NSWindowStyleMaskFullSizeContentView*
 
 ```nim
 NSWindowStyleMaskBorderless*             = 0

@@ -24,7 +24,7 @@ void AddItem(id widget, const char* txt ){
 	NSString *widgetClass = [[widget class] description];
 
 	/* ListBox */
-	if ([widgetClass isEqualToString:@"CocoaListBox"])
+	if ([widgetClass isEqualToString:@"CocoaListBox"] || [widgetClass isEqualToString:@"CocoaTableView"])
 	{
 		[[widget db] addObject: [NSString stringWithUTF8String: txt]];
 		[[widget tbl] reloadData];
@@ -46,8 +46,8 @@ const char* GetText(id widget) {
 
 	/* TextEdit */
 	}else if ([widgetClass isEqualToString:@"CocoaTextEdit"]) {
-		if ( [[[widget textStorage] string] length] > 0) {
-			return [[[widget textStorage] string] UTF8String];
+		if ( [[[widget documentView] string] length] > 0) {
+			return [[[widget documentView] string] UTF8String];
 		}else{
 			return @"".UTF8String;
 		}

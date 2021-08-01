@@ -165,3 +165,6 @@ void addToParent(id parent, id child) {
     }
 }
 
+void setToolTip(id widget, const char *tooltip) {
+	[widget setToolTip: [NSString stringWithUTF8String: tooltip]];
+}

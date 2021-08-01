@@ -78,3 +78,5 @@ proc Notify*(title: cstring; subtitle: cstring; text: cstring) {.cdecl, importc:
 proc newSeparator*(parent: ID; x: cint; y: cint; width: cint): ID {.cdecl, importc: "createLine".}
 
 proc link*( widget: ID, widgetIvar: cstring, target: ID, targetIvar: cstring) {.cdecl, importc:"bind".}
+
+proc `tooltip=`*(widget: ID, tip: cstring) {.cdecl, importc: "setToolTip".}

@@ -2,4 +2,4 @@
 
 import NSFunctions
 
-proc newSaveDialog*(parent: ID, types: cstring): cstring {.cdecl, importc: "createSaveDialog".}
+proc newSaveDialog*(parent: ID, title: cstring, types: cstring): cstring {.cdecl, importc: "createSaveDialog".}

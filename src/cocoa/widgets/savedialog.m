@@ -38,7 +38,7 @@ char* createSaveDialog(id parent, const char* title, const char* types) {
 
     if ([NSApp runModalForWindow:parent] == NSFileHandlingPanelOKButton) {
         NSString* path = [[widget URL] path];
-        // return strdup([path UTF8String]);
+        return strdup([path UTF8String]);
     }
 	return strdup([path UTF8String]);
 

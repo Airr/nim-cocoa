@@ -23,6 +23,7 @@
 
 		tbl = [[NSTableView alloc] initWithFrame: NSMakeRect(5,40,335,185)];
 		[tbl setGridStyleMask: NSTableViewGridNone];
+		[tbl setUsesAlternatingRowBackgroundColors: YES];
 		[tbl setAllowsColumnSelection: YES];
 		[tbl setAllowsColumnReordering: YES];
 		[tbl setAllowsEmptySelection: NO];
@@ -112,4 +113,19 @@ void newTableColumn(id parent, const char *name) {
 	[tCol setTitle: title];
 
 	[[parent tbl] addTableColumn: tCol];
+}
+
+void tableviewSaveToFile(id tview, const char *path) {
+
+	[[tview db] writeToFile: NSSTR(path) atomically:YES];
+}
+
+void tableviewLoadFromFile(id tview, const char *path) {
+	NSArray *fileArrary = [NSArray arrayWithContentsOfFile: NSSTR(path)];
+	[[tview db] removeAllObjects];
+	for (NSMutableDictionary *x in fileArrary) {
+		[[tview db] addObject: x];
+	}
+	
+	[[tview tbl] reloadData];
 }

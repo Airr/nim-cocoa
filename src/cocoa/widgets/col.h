@@ -64,6 +64,8 @@
             void Example(void);
     */
 
+    typedef void(*EVENT_ACTION)(id, const char*);
+
     enum {
         akNone,
         akRight,
@@ -133,13 +135,38 @@
     - (void)selected:(id)sender;
     @end
 
+    @interface CocoaTableView : NSScrollView <NSTableViewDataSource, NSTableViewDelegate>
+    {    
+        NSTableView *tbl;
+        NSTableColumn *tblc;
+        NSTableColumn *tbld;
+        NSMutableArray *db;
+        NSMutableDictionary *dict;
+
+        
+        int cnt;
+    }
+        @property (retain) NSTableView *tbl;
+        @property (retain) NSMutableArray *db;
+        @property (retain) NSMutableDictionary *dict;
+
+
+        - (id)initWithFrame:(NSRect)frame;
+        - (void)doubleclicked:(id)sender;
+        - (void)selected:(id)sender;
+    @end
+
     @interface CocoaButton: NSButton{
         ACTION buttonAction;
+        EVENT_ACTION eventAction;
     }
         @property ACTION buttonAction;
+        @property EVENT_ACTION eventAction;
         
 
         - (void) click:(id)sender;
+        - (void)mouseEntered:(NSEvent *)theEvent;
+        - (void)mouseExited:(NSEvent *)theEvent;
     @end
 
     @interface RadioButton: NSButton{
@@ -593,6 +620,8 @@
     id createTabView(id parent, const char *label, int x, int y, int width, int height);
     void addTab(id parent, const char *name);
     id getTab(id parent, const char *name);
+
+    void eventAction(id widget, EVENT_ACTION callback);
     
 #ifdef __cplusplus
 	}

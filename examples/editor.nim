@@ -47,6 +47,7 @@ Cocoa_Init()
 
 self.window = newWindow("Template", width, height, winStyle)
 self.editor = newTextEdit(self.window,"", 20, 20, width-40, height-40)
+self.editor.anchor = akFull
 setupMenus()
 
 Cocoa_Run(self.window)

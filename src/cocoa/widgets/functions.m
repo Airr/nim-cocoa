@@ -168,3 +168,16 @@ void addToParent(id parent, id child) {
 void setToolTip(id widget, const char *tooltip) {
 	[widget setToolTip: [NSString stringWithUTF8String: tooltip]];
 }
+
+void eventAction(id widget, EVENT_ACTION callback) {
+	[widget setEventAction: callback];
+}
+
+void setSystemAction(id widget, const char *Title, const char *actionName) {
+	SEL selector = NSSelectorFromString(NSSTR(actionName));
+	id menuItem = [widget itemWithTitle: NSSTR(Title)];
+	NSLog(@"%d",[menuItem respondsToSelector: selector]);
+	if (selector) {
+		[menuItem setAction: @selector(selector)];
+	}
+}

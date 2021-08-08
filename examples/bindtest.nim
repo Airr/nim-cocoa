@@ -1,5 +1,4 @@
-import Cocoa / [NSWindow, NSFunctions, NSCheckBox,
-                NSTextField, NSSlider]
+import Cocoa 
 
 const
     winStyle = NSWindowStyleMaskTitled or NSWindowStyleMaskClosable

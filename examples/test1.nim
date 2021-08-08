@@ -1,9 +1,12 @@
-import Cocoa / [NSWindow, NSTextfield, NSButton, NSFunctions, NSCombobox, NSCheckbox, NSLabel, NSSlider, NSTextedit, NSOpenDialog]
+import Cocoa
 
 const
     width = 800
     height = 600
-    winStyle = NSWindowStyleMaskTitled or NSWindowStyleMaskClosable or NSWindowStyleMaskMiniaturizable or NSWindowStyleMaskResizable
+    winStyle = NSWindowStyleMaskTitled or 
+               NSWindowStyleMaskClosable or 
+               NSWindowStyleMaskMiniaturizable or 
+               NSWindowStyleMaskResizable
 
 var mainWindow, txt1, btn1, combo, chkbox, label1, slider1, editor: ID
 

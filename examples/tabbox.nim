@@ -1,5 +1,4 @@
-import Cocoa / [NSFunctions, NSWindow, NSRadioButton, 
-                NSLabel, NSContainer, NSTabView, NSComboBox]
+import Cocoa
 
 const
     winStyle = NSWindowStyleMaskTitled or NSWindowStyleMaskClosable

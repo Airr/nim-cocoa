@@ -1,9 +1,4 @@
-import Cocoa / [NSWindow, 
-                NSFunctions,
-                NSMenu,
-                NSTextedit,
-                NSOpenDialog
-]
+import Cocoa 
 
 const
     winStyle = NSWindowStyleMaskTitled or 

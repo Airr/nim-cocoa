@@ -1,4 +1,4 @@
-import Cocoa / [NSWindow, NSTextfield, NSLabel, NSCheckbox, NSButton, NSLine, NSOpendialog, NSFunctions]
+import Cocoa
 import json, os, plists, times
 
 var mainWin: ID

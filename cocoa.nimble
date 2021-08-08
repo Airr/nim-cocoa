@@ -7,7 +7,7 @@ author        = "Armando Rivera"
 description   = "macOS Cocoa GUI package"
 license       = "MIT"
 bin           = @["bundle"]
-installDirs   = @["cocoa"]
+skipDirs      = @["cocoa"]
 installFiles  = @["cocoa.nim"]
 
 
@@ -19,4 +19,4 @@ before install:
     
     const libDir = getHomeDir() & "/.nimble/lib"
     mkDir(libdir)
-    exec " nim c --app:staticlib -d:release -o:" & libdir & "/libcocoa.a cocoa.nim"
+    exec " nim c --app:staticlib -d:release -o:" & libdir & "/libcocoa.a cocoa_lib.nim"

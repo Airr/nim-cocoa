@@ -4,8 +4,7 @@ version       = "0.1.1"
 author        = "Armando Rivera"
 description   = "macOS Cocoa GUI package"
 license       = "MIT"
-# srcDir        = "src"
-bin           = @["bundle", "cocoa"]
+bin           = @["bundle"]
 installDirs   = @["cocoa"]
 installFiles  = @["cocoa.nim"]
 

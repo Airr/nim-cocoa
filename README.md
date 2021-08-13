@@ -6,43 +6,14 @@ Rather than rely on low level calls to objc_msgsend and it's variants, it uses a
 
 At the moment, the following GUI objects are available:
 
-- NSWindow
+|            |             |              |               |                        |
+| ---------- | ----------- | ------------ | ------------- | ---------------------- |
+| NSWindow   | NSMenu      | NSSavedialog | NSSlider      |                        |
+| NSButton   | NSTextfield | NSMessagebox | NSListbox     | NSContainer (Groupbox) |
+| NSLabel    | NSCheckbox  | NSOpendialog | NSTextedit    | NSTableView            |
+| NSCombobox | NSDialog    | NSLine       | NSRadioButton |                        |
 
-- NSButton
 
-- NSCombobox
-
-- NSLabel
-
-- NSMenu
-
-- NSSavedialog
-
-- NSTextfield
-
-- NSCheckbox
-
-- NSDialog
-
-- NSLine
-
-- NSMessagebox
-
-- NSSlider
-
-- NSListbox
-
-- NSOpendialog
-
-- NSTextedit
-
-- NSRadioButton
-
-- NSTabView
-
-- NSContainer (Groupbox)
-
-- 
 
 Preliminary documentation for GUI objects is available in the `doc` folder.
 

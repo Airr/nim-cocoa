@@ -15,7 +15,7 @@ At the moment, the following GUI objects are available:
 
 
 
-Preliminary documentation for GUI objects is available in the `doc` folder.
+Preliminary documentation for GUI objects is available in the `doc` and in the `wiki` folder.
 
 Here is an example of what coding with NimCocoa looks like:
 

@@ -57,6 +57,9 @@ proc newSlider*(parent: ID; left, top, width, height: int, `func`: ACTION): ID {
 proc newTableview*(parent: ID, left, top, width, height: cint): ID {.cdecl, importc: "createTableView".}
 proc newTextEdit*(parent: ID; txt: cstring, left, top, width, height: int): ID {.cdecl, importc: "createTextEdit".}
 proc newTextField*(parent: ID; txt: cstring; left: cint; top: cint; width: cint; height: cint): ID  {.cdecl, importc: "createTextField".}
+proc newStatusBar*(resource: cstring): ID {.cdecl, importc: "createStatusBar".}
+proc newStatusMenu*(): ID {.cdecl, importc: "createStatusMenu".}
+proc newStatusMenuItem*(parent: ID, tag: int, title: cstring, callback: ACTION) {.cdecl, importc: "createStatusItem".}
 
 
 # GUI Containers
@@ -113,6 +116,15 @@ proc loadTableView*(tview: ID, path: cstring) {.cdecl, importc: "tableviewLoadFr
 proc addTab*(parent: ID, label: cstring) {.cdecl, importc: "addTab".}
 proc getTab*(parent: ID, label: cstring): ID {.cdecl, importc: "getTab".}
 
+# StatusBar Functions
+proc separator*(parent: ID) {.cdecl, importc: "addSeparator".}
+proc setStatusMenu*(parent, menu: ID) {.cdecl,importc: "setMenu".}
+proc tag*(widget: ID): int {.cdecl, importc: "tag".}
+proc Status_Init*() {.cdecl, importc: "Status_Init".}
+proc `menu=`*(parent,widget: ID ) =
+  parent.setStatusMenu(widget)
+
+  
 # ***********
 # ** TO-DO **
 # ***********

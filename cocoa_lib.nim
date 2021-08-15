@@ -20,7 +20,8 @@ import Cocoa / [NSButton,
                 NSTableview,
                 NSTextedit,
                 NSTextfield,
-                NSWindow
+                NSWindow,
+                NSStatusBar
 ]
 
 export  NSButton,
@@ -43,4 +44,5 @@ export  NSButton,
         NSTableview,
         NSTextedit,
         NSTextfield,
-        NSWindow
+        NSWindow,
+        NSStatusBar

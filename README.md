@@ -20,7 +20,7 @@ Preliminary documentation for GUI objects is available in the `doc` folder and i
 Here is an example of what coding with NimCocoa looks like:
 
 ```nim
-import Cocoa / [NSWindow, NSTextfield, NSLabel, NSCheckbox, NSButton, NSLine, NSOpendialog, NSFunctions]
+import Cocoa
 import json, os, plists, times
 
 var mainWin: ID
@@ -33,6 +33,65 @@ const
   width:cint = 800
   height:cint = 310
   winStyle = NSWindowStyleMaskTitled or NSWindowStyleMaskClosable or NSWindowStyleMaskMiniaturizable
+
+proc getExecutable(sender: ID) {.cdecl.} =
+  let fName = newOpenDialog(mainWin, "")
+  if fName.len > 0:
+    txtFile.text = fName
+
+proc getImage(sender: ID) {.cdecl.} =
+  let fName = newOpenDialog(mainWin, "icns")
+  if fName.len > 0:
+    txtImage.text = fName
+
+proc createAppBundle(sender: ID) {.cdecl.} =
+  let dt = now()
+
+  let appAuthor = $txtAuthor.text
+  let appName = $txtFile.text
+  let iconFile = $txtImage.text
+  let bundleName = $txtApp.text
+  let bundleIdentifier = $txtIdent.text
+  let appVersion = $txtVersion.text
+  let appInfo = appVersion & " Created by " & appAuthor & " on " & dt.format("MM-dd-yyyy")
+  let appCopyRight = "Copyright" & dt.format(" yyyy ") & appAuthor & ". All rights reserved."
+  let appBundle = bundleName & ".app"
+
+  var pl = %*
+    { "CFBundlePackageType" : "APPL",
+      "CFBundleInfoDictionaryVersion" : "6.0",
+      "CFBundleName" : bundleName,
+      "CFBundleExecutable" : bundleName,
+      "CFBundleIconFile" : extractFilename(iconFile) ,
+      "CFBundleIdentifier" : bundleIdentifier ,
+      "CFBundleVersion" : appVersion ,
+      "CFBundleGetInfoString" : appInfo,
+      "CFBundleShortVersionString" : appVersion ,
+      "NSHumanReadableCopyright" : appCopyRight ,
+      "NSPrincipalClass" : "NSApplication" ,
+      "NSMainNibFile" : "MainMenu" 
+    }
+
+  createDir(appBundle & "/Contents/MacOS")
+  createDir(appBundle & "/Contents/Resources")
+  createDir(appBundle & "/Contents/Frameworks")
+
+  if appName.fileExists:
+    appName.copyFileWithPermissions(appBundle & "/Contents/MacOS/" & bundleName)
+
+    if iconFile.fileExists:
+      iconFile.copyFileWithPermissions(appBundle & "/Contents/Resources/" & extractFileName(iconFile))
+
+    if "Credits.rtf".fileExists:
+      "Credits.rtf".copyFileWithPermissions(appBundle & "/Contents/Resources/Credits.rtf")
+
+        
+    pl.writePlist(appBundle & "/Contents/Info.plist")
+
+    discard execShellCmd("touch " & appBundle)
+
+    if chkLaunch.state == 1:
+      discard execShellCmd("open " & appBundle)
 
 
 proc main() =

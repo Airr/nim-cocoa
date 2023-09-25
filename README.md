@@ -27,7 +27,8 @@ var mainWin: ID
 
 var lblFile, txtFile, btnFile, lblAuthor, txtAuthor, lblApp, 
     txtApp, lblImage, txtImage, btnImage, line1, lblVersion, 
-    txtVersion, lblIdent, txtIdent, line2, chkLaunch, btnExec: ID
+    txtVersion, lblIdent, txtIdent, line2, chkLaunch, btnExec,
+    btnQuit: ID
 
 const
   width:cint = 800
@@ -43,6 +44,9 @@ proc getImage(sender: ID) {.cdecl.} =
   let fName = newOpenDialog(mainWin, "icns")
   if fName.len > 0:
     txtImage.text = fName
+  
+proc quit(sender: ID) {.cdecl.} =
+  Cocoa_Quit(mainWin)
 
 proc createAppBundle(sender: ID) {.cdecl.} =
   let dt = now()
@@ -131,11 +135,14 @@ proc main() =
 
   line2 = newSeparator(mainWin, 20, 240, 750)
 
-  chkLaunch = newCheckBox(mainWin, "Launch Application?", 320, 270, 150, 25)
-  btnExec = newButton(mainWin, "Execute", 680, 270, 100, 25, createAppBundle)
+  chkLaunch = newCheckBox(mainWin, "Launch Application?", 390, 270, 150, 25)
+  btnExec = newButton(mainWin, "🟢 Execute", 680, 270, 100, 25, createAppBundle)
   chkLaunch.anchor=akLeft + akRight + akBottom; btnExec.anchor=akRight + akBottom
 
+  btnQuit = newButton(mainWin, "🔴 Quit", 565, 270, 100, 25, quit)
+
   Cocoa_Run(mainWin)
+  
 
 if isMainModule:
   main()

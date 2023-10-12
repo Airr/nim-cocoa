@@ -103,7 +103,7 @@ proc state*(widget: ID): cint {.cdecl, importc: "State".}
 proc clear*(widget: ID) {.cdecl, importc: "LB_Clear".}
 proc `item=`(widget: ID; pos: cint) {.cdecl, importc: "SetItem".}
 proc remove*(widget: ID; pos: cint) {.cdecl, importc: "RemoveItem".}
-proc link*( widget: ID, widgetIvar: cstring, target: ID, targetIvar: cstring) {.cdecl, importc:"bind".}
+proc link*( widget: ID, widgetIvar: cstring, target: ID, targetIvar: cstring) {.cdecl, importc:"bindWidget".}
 proc `tooltip=`*(widget: ID, tip: cstring) {.cdecl, importc: "setToolTip".}
 
 # TableView Functions

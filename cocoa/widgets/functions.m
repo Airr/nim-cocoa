@@ -119,6 +119,7 @@ void LB_Clear(id widget) {
 
 void Cocoa_Init() {
     [NSApplication sharedApplication];
+	[NSApp setDelegate: [[AppDelegate new] autorelease]];
     [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
 }
 
@@ -180,4 +181,8 @@ void setSystemAction(id widget, const char *Title, const char *actionName) {
 	if (selector) {
 		[menuItem setAction: @selector(selector)];
 	}
+}
+
+void setDelegate(id widget) {
+	[NSApp setDelegate: widget];
 }

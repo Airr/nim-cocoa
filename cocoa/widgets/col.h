@@ -93,13 +93,19 @@
     - (BOOL)isFlipped;
     @end
 
-    @interface CocoaWindow : NSWindow <NSApplicationDelegate,NSUserNotificationCenterDelegate,NSWindowDelegate, NSTextFieldDelegate>
+    @interface AppDelegate : NSObject <NSApplicationDelegate,NSUserNotificationCenterDelegate,NSWindowDelegate, NSTextFieldDelegate>
+
+    - (void)applicationDidFinishLaunching: (NSNotification *)notification;
+    - (BOOL)applicationShouldTerminateAfterLastWindowClosed: (NSNotification *)notification;
+
+    @end
+    
+    @interface CocoaWindow : NSWindow 
     {
         // NOT USED
     }
 
-    - (void)applicationDidFinishLaunching: (NSNotification *)notification;
-    - (BOOL)applicationShouldTerminateAfterLastWindowClosed: (NSNotification *)notification;
+
     - (id) initFormWithTitle:(NSString*)title width:(NSInteger)width height:(NSInteger)height windowStyle: (NSWindowStyleMask) style;
     - (void)createApplicationMenu;
     @end
@@ -622,6 +628,7 @@
     id getTab(id parent, const char *name);
 
     void eventAction(id widget, EVENT_ACTION callback);
+    void setDelegate(id widget);
     
 #ifdef __cplusplus
 	}

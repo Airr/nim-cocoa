@@ -18,13 +18,13 @@ proc getServers(widget:ID) {.cdecl.} =
   servers = getDics()
 
   for key in servers.keys:
-    lbList.add key
+    lbList.add cstring(key)
 
 proc getWord(widget: ID) {.cdecl.} =
   var selectedDict = $lbList.text
-  tbText.text = getDefinition(servers[selectedDict], $txtEntry.text)
+  tbText.text = cstring(getDefinition(servers[selectedDict], $txtEntry.text))
   var txt:string =  $wintitle & " - \"" & $txtEntry.text & "\""
-  mainwin.text = txt
+  mainwin.text = cstring(txt)
 
 proc Clear(widget: ID) {.cdecl.} =
   tbText.reset
@@ -41,7 +41,7 @@ lblDropList = newLabel(mainwin,"Servers", 16,16,button_width,26)
 drop = newComboBox(mainwin,16, 36,130,26,nil)
 fetch = newButton(mainwin,"Refresh",150,36,button_width,26,getServers)
 for item in dict_servers:
-  drop.add(item)
+  drop.add cstring(item)
 drop.text = "dict.org"
 
 

@@ -1,5 +1,6 @@
 {.compile: "widgets/functions.m".}
 {.compile: "widgets/bind.m".}
+{.compile: "widgets/appdelegate.m".}
 
 type
     ID* = pointer
@@ -80,3 +81,5 @@ proc newSeparator*(parent: ID; x: cint; y: cint; width: cint): ID {.cdecl, impor
 proc link*( widget: ID, widgetIvar: cstring, target: ID, targetIvar: cstring) {.cdecl, importc:"bindWidget".}
 
 proc `tooltip=`*(widget: ID, tip: cstring) {.cdecl, importc: "setToolTip".}
+
+

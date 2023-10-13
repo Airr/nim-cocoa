@@ -91,21 +91,21 @@
     [appMenuItem setSubmenu:appMenu];
 
 }
-- (void)applicationDidFinishLaunching: (NSNotification *)notification
-{
-    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+// - (void)applicationDidFinishLaunching: (NSNotification *)notification
+// {
+//     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 
-}
+// }
  
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed: (NSNotification *)notification
-{
-      return YES;
-}
+// - (BOOL)applicationShouldTerminateAfterLastWindowClosed: (NSNotification *)notification
+// {
+//       return YES;
+// }
 
-- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
-{
-    return YES;
-}
+// - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
+// {
+//     return YES;
+// }
 
 @end
 

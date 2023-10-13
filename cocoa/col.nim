@@ -79,6 +79,7 @@ proc newMenu*(Title: cstring): id {.cdecl, importc: "createMenu".}
 proc newMenuItem*(parent: id; caption: cstring; key: cstring; callback: ACTION) {.cdecl, importc: "createMenuItem".}
 proc newMenuSeparator*(parent: id) {.cdecl, importc: "createMenuSeparator".}
 proc newSlider*(parent: id; left: cint; top: cint; width: cint; height: cint; callback: ACTION): id {.cdecl, importc: "createSlider".}
+proc setDelegate*(widget: ID) {.cdecl, importc: "setDelegate".}
 
 proc `text=`*(widget: id; txt: cstring) =
   widget.SetText(txt)

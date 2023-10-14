@@ -133,9 +133,9 @@ proc main() =
   # btnCredits = newButton(mainWin, "Load", 680, 160, 100, 25, nil)
   txtIdent.anchor=akWidth
 
-  line2 = newSeparator(mainWin, 20, 240, 750)
+  line2 = newSeparator(mainWin, 20, 250, 750)
 
-  chkLaunch = newCheckBox(mainWin, "Launch Application?", 390, 270, 150, 25)
+  chkLaunch = newCheckBox(mainWin, "Launch Application?", 330, 270, 150, 25)
   btnExec = newButton(mainWin, "🟢 Execute", 680, 270, 100, 25, createAppBundle)
   chkLaunch.anchor=akLeft + akRight + akBottom; btnExec.anchor=akRight + akBottom
 
@@ -148,7 +148,7 @@ if isMainModule:
   main()
 ```
 
-Which results in the following:
+Which results in the following (with Darkmode enabled):
 
 ![](images/bundler.png)
 
